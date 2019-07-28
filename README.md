@@ -2,7 +2,7 @@
 7/26/2019
 
 ### Project Title
-Replace the Project Title
+Final work Hit and HitHub
 
 ### Description
 This project is my final work with R language.
