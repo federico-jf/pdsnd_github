@@ -5,7 +5,7 @@ Include the date you created this project and README file.
 Replace the Project Title
 
 ### Description
-Describe what your project is about and what it does
+This project is my final work with R language.
 
 ### Files used
 Include the files used
