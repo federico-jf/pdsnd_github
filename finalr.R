@@ -6,10 +6,10 @@ library(ggplot2)
 
 
 
-#####first exercised evaluated by udacity
+##### EXERCICIO HISTOGRAMA
 
-qplot(x=Birth.Year, data=subset(ny, !Gender==""), binwidth= 2, 
-      color= I('black'), fill= I('#F79420'), 
+qplot(x=Birth.Year, data=subset(ny, !Gender==""), binwidth= 2,
+      color= I('black'), fill= I('#099DD9'),
       ylab= '# of bicycle users',
       xlab= 'Birth Year')+
   scale_x_continuous(breaks = seq(1930, 2000, 10))+
@@ -24,12 +24,12 @@ qplot(x=Birth.Year, data=subset(ny, !Gender==""), binwidth= 2,
 
 
 ggplot(aes(x = Birth.Year, y = Trip.Duration/60), data = chi) +
-  geom_jitter(alpha=1/20, color= 'blue')+
+  geom_jitter(alpha=1/10, color= 'blue')+
   xlim (1930,2000) +
   ylim(0,80) +
   ggtitle('Trip duration in minutes by birth year in Chicago')+
   geom_line (stat= 'summary', fun.y=mean, linetype=1, color= 'red') +
-  geom_line (stat= 'summary', fun.y=quantile, fun.args=list (probs=.5), linetype=2, color= 'black') 
+  geom_line (stat= 'summary', fun.y=quantile, fun.args=list (probs=.5), linetype=2, color= 'black')
 
 
 mean(chi$Trip.Duration)
@@ -41,7 +41,7 @@ median(chi$Trip.Duration)
 
 
 
-qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), 
+qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000),
       data= subset (wash, !User.Type==""), geom='boxplot') +
   ggtitle('Trip duration by User Types in Washington')
 
@@ -56,30 +56,30 @@ wash
 
 
 par(mfrow = c(1, 3))
-qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), 
+qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000),
       data= subset (wash, !User.Type==""), geom='boxplot') +
-      ggtitle('Trip duration by User Type in Washington')  
-qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), 
+      ggtitle('Trip duration by User Type in Washington')
+qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000),
       data= subset (chi, !User.Type==""), geom='boxplot') +
-  ggtitle('Trip duration by User Type in Chicago')  
-qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), 
+  ggtitle('Trip duration by User Type in Chicago')
+qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000),
       data= subset (ny, !User.Type==""), geom='boxplot') +
-  ggtitle('Trip duration by User Type in New York')   
+  ggtitle('Trip duration by User Type in New York')
 
-     
+
 par(mfrow = c(1, 3))
-qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), data= subset (wash, !User.Type==""), geom='boxplot') 
-qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), data= subset (chi, !User.Type==""), geom='boxplot') 
+qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), data= subset (wash, !User.Type==""), geom='boxplot')
+qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), data= subset (chi, !User.Type==""), geom='boxplot')
 qplot(x= User.Type, y=Trip.Duration, ylim= c(0,5000), data= subset (ny, !User.Type==""), geom='boxplot')
 
 
-qplot(y=Trip.Duration, ylim= c(0,5000), 
+qplot(y=Trip.Duration, ylim= c(0,5000),
       data= wash, geom='boxplot') +
   ggtitle('Trip duration in minutes by birth year in Chicago')
 
 
 
-### El siguiente gráfico de dispersion relaciona años de nacimiento de ususrios con duracion del trip en NYC 
+### El siguiente grï¿½fico de dispersion relaciona aï¿½os de nacimiento de ususrios con duracion del trip en NYC
 
 summary(chi$Trip.Duration)
 
@@ -90,7 +90,7 @@ head(chi$10)
 
 age_calc(Birth.Year, enddate = Sys.Date(), units = "years", precise = TRUE)
 
-, binwidth= 2, 
+, binwidth= 2,
       color= I('black'), fill= I('#F79420'))+
   scale_x_continuous(breaks = seq(1930, 2000, 10))
 
@@ -99,7 +99,7 @@ age_calc(Birth.Year, enddate = Sys.Date(), units = "years", precise = TRUE)
 qplot(x = Trip.Duration, data = ny, bindwidth=30) +
   facet_grid(Gender~Start.Time)
 +
-  geom_jitter(alpha=1/20, color= 'orange') 
+  geom_jitter(alpha=1/20, color= 'orange')
 +
   geom_line(stat = 'summary', fun.y = quantile, fun.args = list(probs = .9)) +
   geom_line(stat = 'summary', fun.y = quantile, fun.args = list(probs = .5), color= 'red')
@@ -120,7 +120,7 @@ names(wash)
 attach(ny)
 summary(Trip.Duration)
 
-ES EL DE ACA ABAJO EL QUE ESTÁ BIEN
+ES EL DE ACA ABAJO EL QUE ESTï¿½ BIEN
 
 
 
@@ -128,7 +128,7 @@ head(ny,10)
 
 
 
-qplot(x=Birth.Year, data=ny, binwidth= 2, 
+qplot(x=Birth.Year, data=ny, binwidth= 2,
       color= I('black'), fill= I('#F79420'))+
   scale_x_continuous(breaks = seq(1930, 2000, 10))+
   facet_wrap(~Gender)
@@ -140,7 +140,7 @@ qplot(x=Birth.Year, data=ny, binwidth= 2,
 
 
 qplot(x = Trip.Duration, data = subset(ny, !is.na(Gender)), binwidth = 10)+
-  scale_x_continuous(limits = c(0, 5000), breaks = seq(0, 1000, 50)) + 
+  scale_x_continuous(limits = c(0, 5000), breaks = seq(0, 1000, 50)) +
   facet_wrap(Gender~Gender)
 
 qplot(x=Trip.Duration, data=new_york_city, bins=31) +
