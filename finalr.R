@@ -6,10 +6,10 @@ library(ggplot2)
 
 
 
-#####
+##### EXERCICIO HISTOGRAMA
 
 qplot(x=Birth.Year, data=subset(ny, !Gender==""), binwidth= 2, 
-      color= I('black'), fill= I('#F79420'), 
+      color= I('black'), fill= I('#099DD9'), 
       ylab= '# of bicycle users',
       xlab= 'Birth Year')+
   scale_x_continuous(breaks = seq(1930, 2000, 10))+
