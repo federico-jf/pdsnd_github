@@ -6,7 +6,7 @@ library(ggplot2)
 
 
 
-#####
+#####first exercised evaluated by udacity
 
 qplot(x=Birth.Year, data=subset(ny, !Gender==""), binwidth= 2, 
       color= I('black'), fill= I('#F79420'), 
