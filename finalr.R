@@ -24,7 +24,7 @@ qplot(x=Birth.Year, data=subset(ny, !Gender==""), binwidth= 2,
 
 
 ggplot(aes(x = Birth.Year, y = Trip.Duration/60), data = chi) +
-  geom_jitter(alpha=1/20, color= 'blue')+
+  geom_jitter(alpha=1/10, color= 'blue')+
   xlim (1930,2000) +
   ylim(0,80) +
   ggtitle('Trip duration in minutes by birth year in Chicago')+
